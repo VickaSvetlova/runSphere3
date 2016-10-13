@@ -82,6 +82,7 @@ public class hiroScript : MonoBehaviour {
         if (collision.gameObject.CompareTag("gate")) {
             run = false;
             hiroMesh.active = false;
+            rb.useGravity = false;
             Invoke("respPointS", 0.5f);
             }
 
@@ -93,6 +94,7 @@ public class hiroScript : MonoBehaviour {
 
     void respPointS() {
         hiroMesh.active = true;
+        rb.useGravity = true;
         transform.position = new Vector3(respPoint.transform.position.x, respPoint.transform.position.y, respPoint.transform.position.z);
         Start();
         }
